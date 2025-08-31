@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Classroom</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 { margin: 20px; }
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+    .game-card {
+      background: #222;
+      border: 2px solid #555;
+      border-radius: 10px;
+      padding: 20px;
+      width: 200px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .game-card:hover {
+      border-color: #0f0;
+      transform: scale(1.05);
+    }
+    iframe {
+      margin-top: 20px;
+      border: none;
+      width: 1000px;
+      height: 650px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Games</h1>
+  <div class="menu">
+    <div class="game-card" onclick="loadGame('https://unblocked-games.s3.amazonaws.com/index.html')">FreezeNova</div>
+    <div class="game-card" onclick="loadGame('https://1v1.lol/')">1v1.lol</div>
+    <div class="game-card" onclick="loadGame('https://leveldevil.vip/')">Level Devil</div>
+    <div class="game-card" onclick="loadGame('https://k12guru.nl/')">K12 GURU</div>
+    <div class="game-card" onclick="loadGame('https://faf-games.github.io')">FAF games</div>
+    <div class="game-card" onclick="loadGame('https://www.bestgames.com/')">bestgames.com</div>
+  </div>
+
+  <H1>Happy Wheels coming soon!</H1>
+
+  <iframe id="gameFrame"></iframe>
+
+  <script>
+    function loadGame(url) {
+      const frame = document.getElementById("gameFrame");
+      frame.src = url;
+      frame.style.display = "block";
+      window.scrollTo({ top: frame.offsetTop, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
